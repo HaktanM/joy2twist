@@ -16,10 +16,10 @@ Joy2TwistNode::Joy2TwistNode() : Node("joy2twist_node")
 
   if (cmd_vel_stamped_) {
     twist_stamped_pub_ = create_publisher<MsgTwistStamped>(
-      "cmd_vel", rclcpp::QoS(rclcpp::KeepLast(1)).durability_volatile().reliable());
+      "w200_0000/cmd_vel", rclcpp::QoS(rclcpp::KeepLast(1)).durability_volatile().reliable());
   } else {
     twist_pub_ = create_publisher<MsgTwist>(
-      "cmd_vel", rclcpp::QoS(rclcpp::KeepLast(1)).durability_volatile().reliable());
+      "w200_0000/cmd_vel", rclcpp::QoS(rclcpp::KeepLast(1)).durability_volatile().reliable());
   }
 
   if (e_stop_present_) {
@@ -37,12 +37,12 @@ void Joy2TwistNode::declare_parameters()
 {
   this->declare_parameter<bool>("cmd_vel_stamped", false);
 
-  this->declare_parameter<float>("linear_velocity_factor.fast", 1.0);
-  this->declare_parameter<float>("linear_velocity_factor.regular", 0.5);
-  this->declare_parameter<float>("linear_velocity_factor.slow", 0.2);
-  this->declare_parameter<float>("angular_velocity_factor.fast", 1.0);
-  this->declare_parameter<float>("angular_velocity_factor.regular", 0.5);
-  this->declare_parameter<float>("angular_velocity_factor.slow", 0.2);
+  this->declare_parameter<float>("linear_velocity_factor.fast", 8.0);
+  this->declare_parameter<float>("linear_velocity_factor.regular",4.0);
+  this->declare_parameter<float>("linear_velocity_factor.slow", 2.0);
+  this->declare_parameter<float>("angular_velocity_factor.fast", 3.0);
+  this->declare_parameter<float>("angular_velocity_factor.regular", 1.5);
+  this->declare_parameter<float>("angular_velocity_factor.slow", 1.0);
 
   this->declare_parameter<bool>("e_stop.present", false);
   this->declare_parameter<std::string>("e_stop.topic", "e_stop");
