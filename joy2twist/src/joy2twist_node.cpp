@@ -37,12 +37,12 @@ void Joy2TwistNode::declare_parameters()
 {
   this->declare_parameter<bool>("cmd_vel_stamped", false);
 
-  this->declare_parameter<float>("linear_velocity_factor.fast", 8.0);
-  this->declare_parameter<float>("linear_velocity_factor.regular",4.0);
-  this->declare_parameter<float>("linear_velocity_factor.slow", 2.0);
-  this->declare_parameter<float>("angular_velocity_factor.fast", 3.0);
-  this->declare_parameter<float>("angular_velocity_factor.regular", 1.5);
-  this->declare_parameter<float>("angular_velocity_factor.slow", 1.0);
+  this->declare_parameter<float>("linear_velocity_factor.fast", 5.0);
+  this->declare_parameter<float>("linear_velocity_factor.regular",2.0);
+  this->declare_parameter<float>("linear_velocity_factor.slow", 1.0);
+  this->declare_parameter<float>("angular_velocity_factor.fast", 2.0);
+  this->declare_parameter<float>("angular_velocity_factor.regular", 1.0);
+  this->declare_parameter<float>("angular_velocity_factor.slow", 0.5);
 
   this->declare_parameter<bool>("e_stop.present", false);
   this->declare_parameter<std::string>("e_stop.topic", "e_stop");
