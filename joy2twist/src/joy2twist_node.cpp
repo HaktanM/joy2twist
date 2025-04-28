@@ -16,10 +16,10 @@ Joy2TwistNode::Joy2TwistNode() : Node("joy2twist_node")
 
   if (cmd_vel_stamped_) {
     twist_stamped_pub_ = create_publisher<MsgTwistStamped>(
-      "w200_0000/cmd_vel", rclcpp::QoS(rclcpp::KeepLast(1)).durability_volatile().reliable());
+      "cmd_vel", rclcpp::QoS(rclcpp::KeepLast(1)).durability_volatile().reliable());
   } else {
     twist_pub_ = create_publisher<MsgTwist>(
-      "w200_0000/cmd_vel", rclcpp::QoS(rclcpp::KeepLast(1)).durability_volatile().reliable());
+      "cmd_vel", rclcpp::QoS(rclcpp::KeepLast(1)).durability_volatile().reliable());
   }
 
   if (e_stop_present_) {
