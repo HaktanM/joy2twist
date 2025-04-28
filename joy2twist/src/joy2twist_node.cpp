@@ -35,7 +35,7 @@ Joy2TwistNode::Joy2TwistNode() : Node("joy2twist_node")
 
 void Joy2TwistNode::declare_parameters()
 {
-  this->declare_parameter<bool>("cmd_vel_stamped", false);
+  this->declare_parameter<bool>("cmd_vel_stamped", true);
 
   this->declare_parameter<float>("linear_velocity_factor.fast", 5.0);
   this->declare_parameter<float>("linear_velocity_factor.regular",2.0);
